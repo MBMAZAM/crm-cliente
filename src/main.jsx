@@ -6,7 +6,7 @@ import './index.css'
 import Layout from './components/Layout'
 import NewClient from './pages/NewClient'
 import Index from './pages/Index'
-import { loader as clientLoader, action as clientAction, loaderUpd, actionUpd, actionDel } from './helpers'
+import { loader as clientLoader, action as clientAction, loaderUpd, actionUpd, actionDel } from './helpers/Index'
 import ErrorPage from './components/ErrorPage'
 import EditarClient from './pages/EditarClient'
 
