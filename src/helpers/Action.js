@@ -1,3 +1,7 @@
+import { redirect } from 'react-router-dom';
+import { agregarCliente } from '../data/clientes';
+
+
 export async function action({request}) {
   
   const formData = await request.formData();
@@ -26,9 +30,8 @@ export async function action({request}) {
 
   }
 
+  await agregarCliente(datos);
 
+  return redirect('/')
 
-  return {
-    type: "SUBMIT_FORM"
-  }
 }

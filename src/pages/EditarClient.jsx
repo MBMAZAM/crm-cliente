@@ -1,18 +1,18 @@
-import { useNavigate, Form, useActionData } from 'react-router-dom'
+import { useNavigate, Form, useActionData, useLoaderData } from 'react-router-dom'
 import Formulario from '../components/Formulario';
 import Error from '../components/Error';
 
 
-
-const NewClient = () => {
+const EditarClient = () => {
 
   const errores = useActionData();
   const navigate = useNavigate();
+  const cliente = useLoaderData();
 
   return (
     <>
-      <h1 className="font-black text-4xl text-blue-900">Nuevo Cliente</h1>
-      <p className="mt-3">Llena todos los campos para registar un nuevo cliente</p>
+      <h1 className="font-black text-4xl text-blue-900">Editar Cliente</h1>
+      <p className="mt-3">A continación podrás modificar los datos de un cliente</p>
 
       <div className="flex justify-end">
         <button
@@ -29,20 +29,17 @@ const NewClient = () => {
 
 
         <Form method='POST' noValidate>
-          <Formulario />
-
+          <Formulario cliente={cliente} />
           <input
             type="submit"
-            value="Registrar Cliente"
+            value="Guardar Cambios"
             className='mt-5 w-full bg-blue-800 p-3 text-white uppercase font-bold text-lg cursor-pointer'
           />
         </Form>
 
       </div>
-
     </>
-
   )
 }
 
-export default NewClient
+export default EditarClient

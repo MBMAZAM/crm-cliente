@@ -7,7 +7,6 @@ const Layout = () => {
   // const location = useLocation();
   const { pathname  } = useLocation(); //Este es para saber en que ruta estoy
 
-
   return (
     <div className='md:flex md:min-h-screen'>
       <aside className='md:w-1/4 bg-blue-900 px-5 py-10'>
